@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lịch Tử Vi – Nguyễn Văn Hoa</title>
+<meta name="description" content="Lịch Tử Vi: lịch vạn niên, ngày giờ tốt xấu, đếm ngược Lễ Tết, ngày sinh – ngày giỗ, lá số Tử Vi, la bàn phong thủy, giải mộng. Ứng dụng Android miễn phí.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#1a0d08; --bg2:#26130b; --card:#2e180e; --line:#5a3a1e;
+  --ink:#f6e9cc; --ink2:#d9c39a; --muted:#a88d63;
+  --gold:#f0c35a; --gold2:#c8902c; --red:#b3261a; --red2:#7a160d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'Noto Serif',Georgia,serif}
+a{color:var(--gold)}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)}
+header.top .brand{font-weight:700;letter-spacing:.06em;color:var(--ink2);text-decoration:none}
+header.top nav a{margin-left:16px;text-decoration:none;color:var(--ink2);font-size:14px}
+.hero{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center;padding:48px 0 32px}
+.hero img{width:200px;height:200px;border-radius:44px;box-shadow:0 12px 40px rgba(0,0,0,.45),0 0 0 1px rgba(240,195,90,.35)}
+.hero h1{margin:0;font:900 clamp(38px,7vw,60px)/1.05 'Noto Serif',serif;color:var(--gold)}
+.hero h1 small{display:block;font:700 15px 'Noto Serif SC',serif;letter-spacing:.4em;color:var(--muted);margin-top:8px}
+.hero p{margin:14px 0 20px;color:var(--ink2);font-size:17px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px}
+.btn.play{background:linear-gradient(135deg,var(--red) 0%,var(--red2) 100%);color:#fff6e8;box-shadow:0 6px 18px rgba(120,20,10,.4);border:1px solid rgba(240,195,90,.5)}
+.btn.play svg{width:22px;height:22px}
+.btn.ghost{border:1px solid var(--line);color:var(--ink2)}
+.meta{margin-top:14px;font-size:13px;color:var(--muted)}
+h2{font:700 24px 'Noto Serif',serif;margin:40px 0 16px;display:flex;align-items:center;gap:12px}
+h2 .seal{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff6e8;font:900 18px 'Noto Serif SC',serif}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card .h{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.card .h span{font:900 22px 'Noto Serif SC',serif;color:var(--gold)}
+.card b{font-size:16.5px}
+.card p{margin:0;color:var(--ink2);font-size:14.5px}
+.note{background:var(--card);border:1px dashed var(--line);border-radius:14px;padding:16px 18px;color:var(--ink2);font-size:15px}
+.apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.app{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-decoration:none;color:inherit}
+.app img{width:64px;height:64px;border-radius:16px}
+.app .soon{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;border:1px dashed var(--line);color:var(--muted);font-size:26px}
+.app small{display:block;color:var(--muted);font-size:13px}
+footer{margin:48px 0 0;padding:20px 0 32px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer a{margin-right:16px}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;text-align:center;justify-items:center;padding-top:32px}
+  .hero img{width:150px;height:150px;border-radius:34px}
+  .btns{justify-content:center}
+  .grid{grid-template-columns:1fr 1fr}
+  .apps{grid-template-columns:1fr}
+  header.top nav a{margin-left:12px}
+}
+@media (max-width:460px){ .grid{grid-template-columns:1fr} header.top nav .hide-sm{display:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Nguyễn Văn Hoa · Apps</a>
+    <nav><a href="#tinh-nang">Tính năng</a><a class="hide-sm" href="#ung-dung">Ứng dụng</a><a href="#lien-he">Liên hệ</a></nav>
+  </header>
+
+  <section class="hero">
+    <img src="assets/lich-tu-vi-icon.png" alt="Biểu tượng ứng dụng Lịch Tử Vi" width="200" height="200">
+    <div>
+      <h1>Lịch Tử Vi<small>曆 · 命 · 羅 · 夢</small></h1>
+      <p>Lịch vạn niên và lá số Tử Vi trong một ứng dụng. Xem ngày giờ tốt xấu, đếm ngược Lễ Tết, ghi nhớ ngày sinh – ngày giỗ, la bàn phong thủy và giải mộng. Dùng được cả khi không có mạng.</p>
+      <div class="btns">
+        <a class="btn play" href="https://play.google.com/store/apps/details?id=io.github.nguyenvanhoa1912.lasotuvi" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 2.6v18.8c0 .5.5.8.9.6l16.3-9.4c.4-.2.4-.9 0-1.1L4.9 2c-.4-.2-.9.1-.9.6z"/></svg>
+          Tải trên Google Play
+        </a>
+        <a class="btn ghost" href="#tinh-nang">Xem tính năng</a>
+      </div>
+      <div class="meta">Miễn phí · Android 7.0 trở lên · Tiếng Việt</div>
+    </div>
+  </section>
+
+  <h2 id="tinh-nang"><span class="seal">功</span>Tính năng</h2>
+  <div class="grid">
+    <div class="card"><div class="h"><span>曆</span><b>Lịch vạn niên</b></div><p>Ngày âm – dương, can chi, tiết khí, ngày hoàng đạo – hắc đạo, 12 trực, nhị thập bát tú, ngày kỵ, giờ hoàng đạo.</p></div>
+    <div class="card"><div class="h"><span>節</span><b>Đếm ngược Lễ, Tết</b></div><p>Tết Nguyên đán, Giỗ Tổ, Trung thu, Quốc khánh… Tự chọn ngày lễ muốn theo dõi, ngày sắp đến xếp trước.</p></div>
+    <div class="card"><div class="h"><span>記</span><b>Ngày sinh – Ngày giỗ</b></div><p>Lưu ngày giỗ theo âm lịch, sinh nhật theo âm hoặc dương lịch. Tự tính lần kế tiếp, nhắc ngay trên lịch.</p></div>
+    <div class="card"><div class="h"><span>命</span><b>Lá số Tử Vi</b></div><p>Lập lá số Tử Vi Đẩu Số theo trường phái Việt Nam, luận cung, Đại vận, Tiểu vận. Lưu ảnh, xuất PDF.</p></div>
+    <div class="card"><div class="h"><span>羅</span><b>La bàn phong thủy</b></div><p>Dùng cảm biến điện thoại: 24 sơn, bát quái, tọa – hướng. Tính cung phi và hướng hợp tuổi theo Bát trạch.</p></div>
+    <div class="card"><div class="h"><span>夢</span><b>Giải mộng · Kinh Dịch</b></div><p>Tra ý nghĩa giấc mơ theo quan niệm dân gian và góc nhìn tâm lý. Gieo quẻ Kinh Dịch.</p></div>
+  </div>
+
+  <p class="note" style="margin-top:16px">Dữ liệu bạn nhập (ngày sinh, ngày giỗ, thông tin gia chủ) chỉ lưu trên điện thoại, không gửi lên máy chủ. Ứng dụng hiển thị quảng cáo để duy trì miễn phí. Nội dung mang tính tham khảo theo văn hóa truyền thống.</p>
+
+  <h2 id="ung-dung"><span class="seal">品</span>Ứng dụng</h2>
+  <div class="apps">
+    <a class="app" href="https://play.google.com/store/apps/details?id=io.github.nguyenvanhoa1912.lasotuvi" target="_blank" rel="noopener">
+      <img src="assets/lich-tu-vi-icon.png" alt="">
+      <div><b>Lịch Tử Vi</b><small>Lịch vạn niên · Lá số Tử Vi · La bàn · Giải mộng</small><small>Google Play</small></div>
+    </a>
+    <div class="app"><div class="soon">＋</div><div><b>Ứng dụng mới</b><small>Sắp ra mắt</small></div></div>
+  </div>
+
+  <footer id="lien-he">
+    <p><b>Nhà phát triển:</b> Nguyễn Văn Hoa<br>
+    <b>Email hỗ trợ:</b> <a href="mailto:nguyenvanhoa1912@gmail.com">nguyenvanhoa1912@gmail.com</a></p>
+    <p><a href="https://nguyenvanhoa1912-lasotuvi.github.io/lasotuvi/privacy.html">Chính sách quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=io.github.nguyenvanhoa1912.lasotuvi" target="_blank" rel="noopener">Google Play</a></p>
+    <p>© <span id="y">2026</span> Nguyễn Văn Hoa. Google Play là nhãn hiệu của Google LLC.</p>
+  </footer>
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
